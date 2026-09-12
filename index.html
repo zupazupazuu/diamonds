@@ -195,10 +195,11 @@
     font-family:'Work Sans'; font-size: 13.5px;
   }
   .search-bar input::placeholder{ color: rgba(255,255,255,0.4); }
+  .category-search-row{ display:flex; align-items:center; gap: 14px; margin-bottom: 44px; flex-wrap:wrap; }
   .shop-select{
     font-family: 'Work Sans'; font-size: 13.5px; color: var(--ivory);
     background: var(--onyx-card); border: 1px solid var(--line); padding: 10px 16px;
-    border-radius: 20px; margin-bottom: 44px; cursor: pointer; outline: none;
+    border-radius: 20px; cursor: pointer; outline: none;
     -webkit-appearance: none; appearance: none;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path d='M0 0l5 6 5-6z' fill='%23c9a45c'/></svg>");
     background-repeat: no-repeat; background-position: right 14px center; padding-right: 32px;
@@ -372,12 +373,6 @@
       </div>
     </div>
     <div class="nav-right">
-      <div class="nav-search" id="navSearch">
-        <button type="button" class="search-icon-btn" id="searchIconBtn" aria-label="Search">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        </button>
-        <input type="text" id="searchInput" data-en-placeholder="Search products..." data-id-placeholder="Cari produk..." placeholder="Cari produk...">
-      </div>
       <div class="lang-toggle">
         <button class="lang-btn" data-lang="en">EN</button>
         <button class="lang-btn active" data-lang="id">ID</button>
@@ -441,13 +436,21 @@
 
     <!-- STEP 3: CATEGORY + PRODUCTS -->
     <div class="shop-step" id="stepCategory" style="display:none;">
-      <select class="shop-select" id="shopCategorySelect">
-        <option value="all" data-en="All" data-id="Semua">Semua</option>
-        <option value="rings" data-en="Rings" data-id="Cincin">Cincin</option>
-        <option value="necklaces" data-en="Necklaces" data-id="Kalung">Kalung</option>
-        <option value="earrings" data-en="Earrings" data-id="Anting">Anting</option>
-        <option value="bracelets" data-en="Bracelets" data-id="Gelang">Gelang</option>
-      </select>
+      <div class="category-search-row">
+        <select class="shop-select" id="shopCategorySelect">
+          <option value="all" data-en="All" data-id="Semua">Semua</option>
+          <option value="rings" data-en="Rings" data-id="Cincin">Cincin</option>
+          <option value="necklaces" data-en="Necklaces" data-id="Kalung">Kalung</option>
+          <option value="earrings" data-en="Earrings" data-id="Anting">Anting</option>
+          <option value="bracelets" data-en="Bracelets" data-id="Gelang">Gelang</option>
+        </select>
+        <div class="nav-search" id="navSearch">
+          <button type="button" class="search-icon-btn" id="searchIconBtn" aria-label="Search">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </button>
+          <input type="text" id="searchInput" data-en-placeholder="Search products..." data-id-placeholder="Cari produk..." placeholder="Cari produk...">
+        </div>
+      </div>
     </div>
   </div>
   <div class="wrap">
